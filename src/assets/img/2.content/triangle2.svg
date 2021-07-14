@@ -1,0 +1,34 @@
+<svg width="625" height="564" viewBox="0 0 625 564" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="625" height="564">
+<rect width="625" height="564" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0)">
+<g filter="url(#filter0_d)">
+<path d="M28.3786 112.646L585.024 23.7681L279.966 539.281L28.3786 112.646Z" stroke="url(#paint0_linear)" stroke-width="5"/>
+<path d="M283.214 276.841L29.0287 112.628L278.945 537.696L283.214 276.841ZM283.214 276.841L586.269 21.797" stroke="url(#paint1_linear)" stroke-opacity="0.3" stroke-width="5"/>
+<path d="M572.499 35.588C577.962 40.7091 586.562 40.458 591.709 35.0554C596.855 29.6527 596.621 21.1209 591.158 15.9997C585.695 10.8786 577.095 11.1297 571.948 16.5323C566.802 21.935 567.036 30.4668 572.499 35.588Z" fill="#CD40FF" stroke="#4A2A71" stroke-width="6"/>
+<path d="M20.0332 122.735C25.4963 127.856 34.0964 127.605 39.2429 122.203C44.3893 116.8 44.1556 108.268 38.6925 103.147C33.2293 98.0259 24.6292 98.277 19.4828 103.68C14.3363 109.082 14.57 117.614 20.0332 122.735Z" fill="#04ADBF" stroke="black" stroke-width="6"/>
+<path d="M270.842 544.874C276.305 549.995 284.905 549.744 290.052 544.342C295.198 538.939 294.964 530.407 289.501 525.286C284.038 520.165 275.438 520.416 270.292 525.819C265.145 531.221 265.379 539.753 270.842 544.874Z" fill="#04ADBF" stroke="black" stroke-width="6"/>
+<path d="M272.584 286.672C278.047 291.793 286.647 291.542 291.794 286.139C296.94 280.737 296.707 272.205 291.244 267.084C285.78 261.963 277.18 262.214 272.034 267.616C266.887 273.019 267.121 281.551 272.584 286.672Z" fill="#04ADBF" stroke="black" stroke-width="6"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" x="-7.23828" y="-10.6736" width="625.668" height="582.221" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="10"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.0156863 0 0 0 0 0.678431 0 0 0 0 0.74902 0 0 0 0.8 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear" x1="509.487" y1="-47.0396" x2="109.587" y2="379.567" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CD40FF"/>
+<stop offset="1" stop-color="#04ADBF"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x1="509.302" y1="-47.8412" x2="109.401" y2="378.766" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CD40FF"/>
+<stop offset="1" stop-color="#04ADBF"/>
+</linearGradient>
+</defs>
+</svg>
