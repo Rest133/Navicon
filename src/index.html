@@ -17,14 +17,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,900;1,300&display=swap"
-          rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,900;1,300&display=swap"-->
+<!--          rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper">
     @@include('_header.html')
 
-    <!-- First Block -->
+    <!-- Digital directions block -->
     <section class="block block_dark block_first-on-page digital-directions">
         <div class="block__content">
             <p class="block__title block__title_digital-directions"><span>3 направления </span>цифровой трансформации</p>
@@ -40,11 +41,13 @@
         </div>
         <div class="digital-directions__bottom-counters bottom-counters">
             <div class="bottom-counters__arrow">
-
+                <div class="bottom-counters__small-arrow bottom-counters__small-arrow_left"></div>
+                <div class="bottom-counters__small-arrow bottom-counters__small-arrow_middle"></div>
+                <div class="bottom-counters__small-arrow bottom-counters__small-arrow_right"></div>
             </div>
             <div class="bottom-counters__text-block">
                 <p class="bottom-counters__digits">15+</p>
-                <p class="bottom-counters__text">лет являемся лидером
+                <p class="bottom-counters__text">лет являемся лидером <br>
                     ИТ-консалтинга</p>
             </div>
             <div class="bottom-counters__text-block">
@@ -65,17 +68,17 @@
         <div class="moving-element moving-element_radiant-round-shape">
         </div>
     </section>
-    <!-- /First Block-->
+    <!-- /Digital directions block-->
 
-    <!-- Second Block -->
-    <section class="block advantages-block">
+    <!-- Main page advantages block -->
+    <section class="block advantages-block advantages-block_main-page">
         <div class="block__content">
             <div class="advantages-block__list">
                 <div class="advantages-block__list-item">
                     <div class="block__img-wrapper">
                         <img src="assets/img/2.content/advantages1.svg" alt="" class="block__img">
                     </div>
-                    <p class="advantages-block__list-item-title">Улучшайте  качество обслуживания клиентов</p>
+                    <p class="advantages-block__list-item-title">Улучшайте <br> качество обслуживания клиентов</p>
                     <p class="advantages-block__list-item-text">Позвольте каждому клиенту чувствовать себя
                         особенным и оперативно отвечайте  на его запросы</p>
                     <a href="#" class="advantages-block__list-item-link">Узнать больше о Data&Analytics</a>
@@ -84,7 +87,7 @@
                     <div class="block__img-wrapper">
                         <img src="assets/img/2.content/advantages2.svg" alt="" class="block__img">
                     </div>
-                    <p class="advantages-block__list-item-title">Повышайте  операционную  эффективность</p>
+                    <p class="advantages-block__list-item-title">Повышайте <br> операционную <br> эффективность</p>
                     <p class="advantages-block__list-item-text">Выполняйте бизнес-задачи быстрее,
                         результативнее и с меньшим количеством ошибок</p>
                     <a href="#" class="advantages-block__list-item-link">Узнать больше о Extended ERP</a>
@@ -93,26 +96,386 @@
                     <div class="block__img-wrapper">
                         <img src="assets/img/2.content/advantages3.svg" alt="" class="block__img">
                     </div>
-                    <p class="advantages-block__list-item-title">Открывайте  новые инсайты для вашего бизнеса</p>
+                    <p class="advantages-block__list-item-title">Открывайте <br> новые инсайты <br> для вашего бизнеса</p>
                     <p class="advantages-block__list-item-text">Анализируйте продажи, стройте прогнозы и
                         выявляйте новые точки роста в компании</p>
                     <a href="#" class="advantages-block__list-item-link">Узнать больше о CRM</a>
                 </div>
             </div>
         </div>
-        <div class="moving-element moving-element_triangle">
+        <div class="moving-element moving-element_triangle moving-element_triangle_3">
             <img src="assets/img/2.content/triangle3.svg" alt="" class="moving-element__img">
         </div>
     </section>
-    <!-- /Second Block-->
+    <!-- /Main page advantages block-->
 
-    <!-- Third Block -->
-    <section class="block block_dark">
+    <!-- Cloud migrations block -->
+    <section class="block block_dark cloud-migrations">
         <div class="block__content">
-
+            <p class="block__title block__title_cloud-migrations">Миграция в облако по всем продуктам</p>
+            <p class="cloud-migrations__text">Обеспечивайте высокий уровень безопасности и повышайте производительность
+                бизнес-процессов с помощью быстрой и удобной миграции в облако.</p>
+            <button class="block__button block__button_cloud-migrations">Получить бесплатную консультацию</button>
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_4">
+            <img src="assets/img/2.content/triangle4.svg" alt="" class="moving-element__img">
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_5">
+            <img src="assets/img/2.content/triangle5.svg" alt="" class="moving-element__img">
         </div>
     </section>
-    <!-- /Third Block-->
+    <!-- /Cloud migrations block-->
+
+    <!-- Portfolio block -->
+    <section class="block portfolio">
+        <div class="block__content">
+            <p class="block__title block__title_portfolio"> <span>890+</span> успешно выполненных проектов в <span>15+</span> странах</p>
+            <div class="portfolio__projects">
+                <div class="portfolio__left-block">
+                    <p class="portfolio__direction-title">Pharma</p>
+                    <p class="portfolio__direction-title">FMCG</p>
+                    <p class="portfolio__direction-title">Finance</p>
+                </div>
+                <div class="portfolio__right-block">
+                    <div class="portfolio__slider">
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo1.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo2.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo3.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo4.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo1.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo4.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio__slider">
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo5.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo6.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo7.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo8.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo5.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo8.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio__slider">
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo9.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo10.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo11.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo12.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo9.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                        <div class="portfolio__slider-item">
+                            <div class="portfolio__slider-item-img-wrapper">
+                                <img src="assets/img/2.content/portfolio-logo12.png" alt="" class="portfolio__slider-item-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="portfolio__link">Посмотреть все отрасли</a>
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_6">
+            <img src="assets/img/2.content/triangle6.svg" alt="" class="moving-element__img">
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_7">
+            <img src="assets/img/2.content/triangle7.svg" alt="" class="moving-element__img">
+        </div>
+    </section>
+    <!-- /Portfolio block-->
+
+    <!-- Awards block -->
+    <section class="block block_dark awards">
+        <div class="block__content">
+            <div class="awards__list">
+                <div class="awards__category">
+                    <p class="awards__category-title">DATA & Analytics</p>
+                    <div class="awards__list-item">
+                        <p class="awards__list-item-title">C-NEWS</p>
+                        <p class="awards__list-item-text">ТОП-10 поставщикк <br> BI-решений</p>
+                    </div>
+                    <div class="awards__list-item">
+                        <p class="awards__list-item-title">Global CIO </p>
+                        <p class="awards__list-item-text">«Проект года» 2020</p>
+                    </div>
+                </div>
+                <div class="awards__category">
+                    <p class="awards__category-title">ERP</p>
+                    <div class="awards__list-item">
+                        <p class="awards__list-item-title">Microsoft</p>
+                        <p class="awards__list-item-text">Золотой партнёр ERP <br>с 2011 года</p>
+                    </div>
+                    <div class="awards__list-item">
+                        <p class="awards__list-item-title">Global CIO </p>
+                        <p class="awards__list-item-text">«Проект года» 2020</p>
+                    </div>
+                </div>
+                <div class="awards__category">
+                    <p class="awards__category-title">CRM</p>
+                    <div class="awards__list-item">
+                        <p class="awards__list-item-title">Gartner</p>
+                        <p class="awards__list-item-text">Надежный поставщик <br> CRM-систем</p>
+                    </div>
+                    <div class="awards__list-item">
+                        <p class="awards__list-item-title">Microsoft</p>
+                        <p class="awards__list-item-text">Золотой партнёр по CRM<br>с 2011 года</p>
+                    </div>
+                </div>
+            </div>
+            <button class="block__button block__button_awards">Больше наград</button>
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_8">
+            <img src="assets/img/2.content/triangle8.svg" alt="" class="moving-element__img">
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_9">
+            <img src="assets/img/2.content/triangle9.svg" alt="" class="moving-element__img">
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_10">
+            <img src="assets/img/2.content/triangle10.svg" alt="" class="moving-element__img">
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_11">
+            <img src="assets/img/2.content/triangle11.svg" alt="" class="moving-element__img">
+        </div>
+        <div class="moving-element moving-element_radiant-round-shape moving-element_radiant-round-shape_awards">
+        </div>
+    </section>
+    <!-- /Awards block-->
+
+    <!-- Specialist quote block -->
+    <section class="block block_grey specialist-quote">
+        <div class="block__content">
+           <div class="specialist-quote__content">
+               <div class="specialist-quote__photo">
+                   <div class="specialist-quote__img-wrapper">
+                       <img src="assets/img/2.content/quote-author-photo.png" alt="" class="specialist-quote__img">
+                   </div>
+               </div>
+               <div class="specialist-quote__text-block">
+                   <p class="specialist-quote__quote-text">«Также как экономическая повестка сегодняшнего дня играет
+                       важную роль в формировании системы массового участия. В целом, конечно, выбранный нами
+                       инновационный путь требует анализа новых принципов формирования материально-технической и
+                       кадровой базы»</p>
+                   <p class="specialist-quote__author">Samuel Willson</p>
+                   <p class="specialist-quote__author-position">
+                       Creative director <a href="#">in P-pharme</a>
+                   </p>
+               </div>
+           </div>
+        </div>
+    </section>
+    <!-- /Specialist quote block-->
+
+    <!-- Partners block -->
+    <section class="block partners">
+        <div class="block__content">
+           <p class="partners__title">Ключевые партнёры</p>
+            <div class="partners__slider">
+                <div class="partners__slider-item">
+                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_microsoft">
+                        <img src="assets/img/2.content/partner-logo1.svg" alt="" class="partners__slider-item-img">
+                    </div>
+                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_tableau">
+                        <img src="assets/img/2.content/partner-logo2.svg" alt="" class="partners__slider-item-img">
+                    </div>
+                </div>
+                <div class="partners__slider-item">
+                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_ibm">
+                        <img src="assets/img/2.content/partner-logo3.svg" alt="" class="partners__slider-item-img">
+                    </div>
+                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_creatio">
+                        <img src="assets/img/2.content/partner-logo4.svg" alt="" class="partners__slider-item-img">
+                    </div>
+                </div>
+                <div class="partners__slider-item">
+                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_salesforce">
+                        <img src="assets/img/2.content/partner-logo5.svg" alt="" class="partners__slider-item-img">
+                    </div>
+                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_yandex">
+                        <img src="assets/img/2.content/partner-logo6.svg" alt="" class="partners__slider-item-img">
+                    </div>
+                </div>
+                <div class="partners__slider-item">
+                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_ibm">
+                        <img src="assets/img/2.content/partner-logo3.svg" alt="" class="partners__slider-item-img">
+                    </div>
+                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_creatio">
+                        <img src="assets/img/2.content/partner-logo4.svg" alt="" class="partners__slider-item-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_12">
+            <img src="assets/img/2.content/triangle12.svg" alt="" class="moving-element__img">
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_13">
+            <img src="assets/img/2.content/triangle13.svg" alt="" class="moving-element__img">
+        </div>
+    </section>
+    <!-- /Partners block-->
+
+    <!-- Partners block -->
+    <section class="block block_dark news">
+        <div class="block__content">
+            <div class="news__content">
+                <div class="news__last-news">
+                    <p class="news__title">Последние новости</p>
+                    <div class="news__last-news-img-wrapper">
+                        <img src="assets/img/2.content/last-news.png" alt="" class="news__img">
+                    </div>
+                    <p class="news__last-news-title">Выбранный нами инновационный путь даёт нам право принимать
+                        самостоятельные решения</p>
+                    <p class="news__last-news-description">Банальные, но неопровержимые выводы, а также непосредственные
+                        участники технического прогресса будут разоблачены. Как принято считать, ключевые особенности
+                        структуры.</p>
+                    <p class="news__last-news-date">15 июня 2021</p>
+                    <a href="#" class="news__link">Все новости</a>
+                </div>
+                <div class="news__all-news">
+                    <p class="news__title">Будь в курсе <br>наших событий</p>
+                    <div class="news__list">
+                        <div class="news__list-item">
+                            <div class="news__img-wrapper">
+                                <img src="assets/img/2.content/news1.png" alt="" class="news__img">
+                            </div>
+                            <p class="news__all-news-title">Банальные, но неопровержимые выводы, а также явные.</p>
+                            <p class="news__all-news-date">15 июня 2021</p>
+                        </div>
+                        <div class="news__list-item">
+                            <div class="news__img-wrapper">
+                                <img src="assets/img/2.content/news2.png" alt="" class="news__img">
+                            </div>
+                            <p class="news__all-news-title">Значимость этих проблем настолько очевидна, что.</p>
+                            <p class="news__all-news-date">16 августа 2021</p>
+                        </div>
+                        <div class="news__list-item">
+                            <div class="news__img-wrapper">
+                                <img src="assets/img/2.content/news3.png" alt="" class="news__img">
+                            </div>
+                            <p class="news__all-news-title">Противоположная точка зрения подразумевает, что действия.</p>
+                            <p class="news__all-news-date">10 сентября 2021</p>
+                        </div>
+                        <div class="news__list-item">
+                            <div class="news__img-wrapper">
+                                <img src="assets/img/2.content/news4.png" alt="" class="news__img">
+                            </div>
+                            <p class="news__all-news-title">Есть над чем задуматься: сторонники тоталитаризма в науке.</p>
+                            <p class="news__all-news-date">12 октября 2021</p>
+                        </div>
+                        <div class="news__list-item">
+                            <div class="news__img-wrapper">
+                                <img src="assets/img/2.content/news5.png" alt="" class="news__img">
+                            </div>
+                            <p class="news__all-news-title">А ещё независимые государства представляют собой </p>
+                            <p class="news__all-news-date">3 ноября 2021</p>
+                        </div>
+                        <div class="news__list-item">
+                            <div class="news__img-wrapper">
+                                <img src="assets/img/2.content/news6.png" alt="" class="news__img">
+                            </div>
+                            <p class="news__all-news-title">Кстати,  представители современных социальных резервов.</p>
+                            <p class="news__all-news-date">31 декабря 2021</p>
+                        </div>
+                    </div>
+                    <a href="#" class="news__link">Все мероприятия</a>
+                </div>
+            </div>
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_14">
+            <img src="assets/img/2.content/triangle14.svg" alt="" class="moving-element__img">
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_15">
+            <img src="assets/img/2.content/triangle15.svg" alt="" class="moving-element__img">
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_16">
+            <img src="assets/img/2.content/triangle16.svg" alt="" class="moving-element__img">
+        </div>
+    </section>
+    <!-- /Partners block-->
+
+    <!-- Partners block -->
+    <section class="block join-us">
+        <div class="block__content">
+            <div class="join-us__content">
+                <div class="join-us__text-block">
+                    <p class="join-us__title">Присоединяйтесь к нам!</p>
+                    <p class="join-us__description">
+                        Становись лучше каждый день с Navicon, работай только <br> с новейшими технологиями и крупнейшими международными
+                        компаниями по всему миру. Учись и расти профессионально <br> в команде экспертов
+                    </p>
+                    <button class="block__button block__button_join-us">Карьера в Navicon</button>
+                </div>
+                <div class="join-us__img-wrapper">
+                    <img src="assets/img/2.content/join.png" alt="" class="join-us__img">
+                </div>
+            </div>
+        </div>
+        <div class="moving-element moving-element_triangle moving-element_triangle_17">
+            <img src="assets/img/2.content/triangle17.svg" alt="" class="moving-element__img">
+        </div>
+    </section>
+    <!-- /Partners block-->
 
     @@include('_footer.html')
 </div>
@@ -120,5 +483,8 @@
 <div class="writing-text-list">
     <p class="text-writing">повышение качества обслуживания клие</p>
 </div>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/slick.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
