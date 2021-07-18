@@ -17,7 +17,16 @@ function addPortfolioSliderHandler() {
                 slidesToShow: 5,
                 infinite: false,
                 variableWidth: true,
-                draggable: false
+                draggable: false,
+                responsive:[
+                    {
+                        breakpoint: 1025,
+                        settings: {
+                            arrows: false,
+                            slidesToShow:2
+                        }
+                    }
+                ]
             })
         })
     }
@@ -28,7 +37,7 @@ function addPartnersPortfolio() {
         let slider = document.querySelector('.partners__slider')
         $(slider).slick({
             arrows: true,
-            slidesToShow: 3,
+            slidesToShow: 1,
             infinite: false,
             adaptiveHeight: true,
             draggable: false

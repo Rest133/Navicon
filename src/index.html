@@ -131,12 +131,8 @@
         <div class="block__content">
             <p class="block__title block__title_portfolio"> <span>890+</span> успешно выполненных проектов в <span>15+</span> странах</p>
             <div class="portfolio__projects">
-                <div class="portfolio__left-block">
+                <div class="portfolio__slider-container">
                     <p class="portfolio__direction-title">Pharma</p>
-                    <p class="portfolio__direction-title">FMCG</p>
-                    <p class="portfolio__direction-title">Finance</p>
-                </div>
-                <div class="portfolio__right-block">
                     <div class="portfolio__slider">
                         <div class="portfolio__slider-item">
                             <div class="portfolio__slider-item-img-wrapper">
@@ -169,6 +165,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="portfolio__slider-container">
+                    <p class="portfolio__direction-title">FMCG</p>
                     <div class="portfolio__slider">
                         <div class="portfolio__slider-item">
                             <div class="portfolio__slider-item-img-wrapper">
@@ -201,6 +200,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="portfolio__slider-container">
+                    <p class="portfolio__direction-title">Finance</p>
                     <div class="portfolio__slider">
                         <div class="portfolio__slider-item">
                             <div class="portfolio__slider-item-img-wrapper">
@@ -333,35 +335,47 @@
            <p class="partners__title">Ключевые партнёры</p>
             <div class="partners__slider">
                 <div class="partners__slider-item">
-                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_microsoft">
-                        <img src="assets/img/2.content/partner-logo1.svg" alt="" class="partners__slider-item-img">
+                    <div class="partners__slider-item-partner-logo">
+                        <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_microsoft">
+                            <img src="assets/img/2.content/partner-logo1.svg" alt="" class="partners__slider-item-img">
+                        </div>
                     </div>
-                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_tableau">
-                        <img src="assets/img/2.content/partner-logo2.svg" alt="" class="partners__slider-item-img">
+                    <div class="partners__slider-item-partner-logo">
+                        <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_ibm">
+                            <img src="assets/img/2.content/partner-logo3.svg" alt="" class="partners__slider-item-img">
+                        </div>
+                    </div>
+                    <div class="partners__slider-item-partner-logo">
+                        <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_salesforce">
+                            <img src="assets/img/2.content/partner-logo5.svg" alt="" class="partners__slider-item-img">
+                        </div>
+                    </div>
+                    <div class="partners__slider-item-partner-logo">
+                        <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_tableau">
+                            <img src="assets/img/2.content/partner-logo2.svg" alt="" class="partners__slider-item-img">
+                        </div>
+                    </div>
+                    <div class="partners__slider-item-partner-logo">
+                        <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_creatio">
+                            <img src="assets/img/2.content/partner-logo4.svg" alt="" class="partners__slider-item-img">
+                        </div>
+                    </div>
+                    <div class="partners__slider-item-partner-logo">
+                        <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_yandex">
+                            <img src="assets/img/2.content/partner-logo6.svg" alt="" class="partners__slider-item-img">
+                        </div>
                     </div>
                 </div>
                 <div class="partners__slider-item">
-                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_ibm">
-                        <img src="assets/img/2.content/partner-logo3.svg" alt="" class="partners__slider-item-img">
+                    <div class="partners__slider-item-partner-logo">
+                        <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_ibm">
+                            <img src="assets/img/2.content/partner-logo3.svg" alt="" class="partners__slider-item-img">
+                        </div>
                     </div>
-                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_creatio">
-                        <img src="assets/img/2.content/partner-logo4.svg" alt="" class="partners__slider-item-img">
-                    </div>
-                </div>
-                <div class="partners__slider-item">
-                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_salesforce">
-                        <img src="assets/img/2.content/partner-logo5.svg" alt="" class="partners__slider-item-img">
-                    </div>
-                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_yandex">
-                        <img src="assets/img/2.content/partner-logo6.svg" alt="" class="partners__slider-item-img">
-                    </div>
-                </div>
-                <div class="partners__slider-item">
-                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_ibm">
-                        <img src="assets/img/2.content/partner-logo3.svg" alt="" class="partners__slider-item-img">
-                    </div>
-                    <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_creatio">
-                        <img src="assets/img/2.content/partner-logo4.svg" alt="" class="partners__slider-item-img">
+                    <div class="partners__slider-item-partner-logo">
+                        <div class="partners__slider-item-img-wrapper partners__slider-item-img-wrapper_creatio">
+                            <img src="assets/img/2.content/partner-logo4.svg" alt="" class="partners__slider-item-img">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -397,47 +411,52 @@
                 <div class="news__all-news">
                     <p class="news__title">Будь в курсе <br>наших событий</p>
                     <div class="news__list">
-                        <div class="news__list-item">
-                            <div class="news__img-wrapper">
-                                <img src="assets/img/2.content/news1.png" alt="" class="news__img">
+                        <div class="news__list-item-wrapper">
+                            <div class="news__list-item">
+                                <div class="news__img-wrapper">
+                                    <img src="assets/img/2.content/news1.png" alt="" class="news__img">
+                                </div>
+                                <p class="news__all-news-title">Банальные, но неопровержимые выводы, а также явные.</p>
+                                <p class="news__all-news-date">15 июня 2021</p>
                             </div>
-                            <p class="news__all-news-title">Банальные, но неопровержимые выводы, а также явные.</p>
-                            <p class="news__all-news-date">15 июня 2021</p>
-                        </div>
-                        <div class="news__list-item">
-                            <div class="news__img-wrapper">
-                                <img src="assets/img/2.content/news2.png" alt="" class="news__img">
+                            <div class="news__list-item">
+                                <div class="news__img-wrapper">
+                                    <img src="assets/img/2.content/news2.png" alt="" class="news__img">
+                                </div>
+                                <p class="news__all-news-title">Значимость этих проблем настолько очевидна, что.</p>
+                                <p class="news__all-news-date">16 августа 2021</p>
                             </div>
-                            <p class="news__all-news-title">Значимость этих проблем настолько очевидна, что.</p>
-                            <p class="news__all-news-date">16 августа 2021</p>
-                        </div>
-                        <div class="news__list-item">
-                            <div class="news__img-wrapper">
-                                <img src="assets/img/2.content/news3.png" alt="" class="news__img">
+                            <div class="news__list-item">
+                                <div class="news__img-wrapper">
+                                    <img src="assets/img/2.content/news3.png" alt="" class="news__img">
+                                </div>
+                                <p class="news__all-news-title">Противоположная точка зрения подразумевает, что
+                                    действия.</p>
+                                <p class="news__all-news-date">10 сентября 2021</p>
                             </div>
-                            <p class="news__all-news-title">Противоположная точка зрения подразумевает, что действия.</p>
-                            <p class="news__all-news-date">10 сентября 2021</p>
-                        </div>
-                        <div class="news__list-item">
-                            <div class="news__img-wrapper">
-                                <img src="assets/img/2.content/news4.png" alt="" class="news__img">
+                            <div class="news__list-item">
+                                <div class="news__img-wrapper">
+                                    <img src="assets/img/2.content/news4.png" alt="" class="news__img">
+                                </div>
+                                <p class="news__all-news-title">Есть над чем задуматься: сторонники тоталитаризма в
+                                    науке.</p>
+                                <p class="news__all-news-date">12 октября 2021</p>
                             </div>
-                            <p class="news__all-news-title">Есть над чем задуматься: сторонники тоталитаризма в науке.</p>
-                            <p class="news__all-news-date">12 октября 2021</p>
-                        </div>
-                        <div class="news__list-item">
-                            <div class="news__img-wrapper">
-                                <img src="assets/img/2.content/news5.png" alt="" class="news__img">
+                            <div class="news__list-item">
+                                <div class="news__img-wrapper">
+                                    <img src="assets/img/2.content/news5.png" alt="" class="news__img">
+                                </div>
+                                <p class="news__all-news-title">А ещё независимые государства представляют собой </p>
+                                <p class="news__all-news-date">3 ноября 2021</p>
                             </div>
-                            <p class="news__all-news-title">А ещё независимые государства представляют собой </p>
-                            <p class="news__all-news-date">3 ноября 2021</p>
-                        </div>
-                        <div class="news__list-item">
-                            <div class="news__img-wrapper">
-                                <img src="assets/img/2.content/news6.png" alt="" class="news__img">
+                            <div class="news__list-item">
+                                <div class="news__img-wrapper">
+                                    <img src="assets/img/2.content/news6.png" alt="" class="news__img">
+                                </div>
+                                <p class="news__all-news-title">Кстати, представители современных социальных
+                                    резервов.</p>
+                                <p class="news__all-news-date">31 декабря 2021</p>
                             </div>
-                            <p class="news__all-news-title">Кстати,  представители современных социальных резервов.</p>
-                            <p class="news__all-news-date">31 декабря 2021</p>
                         </div>
                     </div>
                     <a href="#" class="news__link">Все мероприятия</a>
