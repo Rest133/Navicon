@@ -1,0 +1,29 @@
+@keyframes changeColor {
+  0% {
+    background: #CD40FF;
+  }
+  50% {
+    background: #04ADBF;
+  }
+  100% {
+    background: #CD40FF;
+  }
+}
+
+@keyframes changeSize {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

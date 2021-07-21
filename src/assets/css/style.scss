@@ -341,97 +341,148 @@
 .moving-element {
   position: absolute;
   z-index: 3;
-  @media (max-width: 1025px) {
-    display: none;
-  }
+}
+
+.moving-element__dot {
+  width: 24px;
+  height: 24px;
+  border: 6px solid #000000;
+  border-radius: 50%;
+  background-color: #CD40FF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.moving-element__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%
 }
 
 .moving-element_triangle_1 {
   top: 5%;
   right: -10%;
+  width: 770px;
+  height: 754px;
 }
 
 .moving-element_triangle_2 {
   left: -10%;
   bottom: -13%;
   z-index: 0;
+  width: 625px;
+  height: 584px;
 }
 
 .moving-element_triangle_3 {
   left: -11%;
   bottom: -42%;
+  width: 512px;
+  height: 505px;
 }
 
 .moving-element_triangle_4 {
   right: 40%;
   bottom: 1%;
+  width: 224px;
+  height: 210px;
 }
 
 .moving-element_triangle_5 {
   right: 5%;
   bottom: -10%;
+  width: 412px;
+  height: 417px;
 }
 
 .moving-element_triangle_6 {
   top: 5%;
   right: 1%;
+  width: 310px;
+  height: 338px;
 }
 
 .moving-element_triangle_7 {
   bottom: -35%;
   right: -13%;
   z-index: 0;
+  width: 560px;
+  height: 637px;
 }
 
 .moving-element_triangle_8 {
   top: 3%;
   left: 58%;
+  width: 134px;
+  height: 142px;
 }
 
 .moving-element_triangle_9 {
   top: 1%;
   left: 0;
+  width: 350px;
+  height: 638px;
 }
 
 .moving-element_triangle_10 {
   bottom: -1%;
   left: 21%;
+  width: 224px;
+  height: 214px;
 }
 
 .moving-element_triangle_11 {
   right: 5%;
   bottom: -20%;
+  width: 516px;
+  height: 488px;
 }
 
 .moving-element_triangle_12 {
   top: -15%;
   left: -5%;
+  width: 512px;
+  height: 511px;
 }
 
 .moving-element_triangle_13 {
   bottom: 10%;
   right: -11%;
   z-index: 0;
+  width: 490px;
+  height: 474px;
 }
 
 .moving-element_triangle_14 {
   left: -25%;
   top: 0;
+  width: 670px;
+  height: 667px;
 }
 
 .moving-element_triangle_15 {
   left: -2%;
   bottom: 5%;
+  width: 188px;
+  height: 188px;
 }
 
 .moving-element_triangle_16 {
   bottom: -5%;
   right: -23%;
+  width: 675px;
+  height: 706px;
 }
 
 .moving-element_triangle_17 {
   right: 40%;
   bottom: 1%;
+  width: 285px;
+  height: 294px;
 }
 
 .moving-element_radiant-round-shape {
@@ -721,6 +772,7 @@
   width: 70.9%;
   border: 1px solid #E5E5E5;
   border-bottom: 0;
+  background: #FFFFFF;
   @media (max-width: 767px) {
     width: 110%;
     margin-bottom: 20px;
@@ -1318,6 +1370,7 @@
 @import "slider";
 @import "footer";
 @import "popups";
+@import "animations";
 
 //Special classes
 .dn {
