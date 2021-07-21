@@ -50,9 +50,15 @@ ul {
   justify-content: space-between;
   height: 120px;
   color: #fff;
-  max-width: 1570px;
-  padding: 0 15px;
+  max-width: 1920px;
+  padding: 0 175px;
   margin: 0 auto;
+}
+@media (max-width: 1650px) {
+  .header__wrapper {
+    max-width: 1570px;
+    padding: 0 15px;
+  }
 }
 @media (max-width: 1025px) {
   .header__wrapper {
@@ -642,11 +648,17 @@ ul {
 }
 
 .block__content {
-  max-width: 1570px;
+  max-width: 1920px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 175px;
   z-index: 5;
+}
+@media (max-width: 1650px) {
+  .block__content {
+    max-width: 1570px;
+    padding: 0 15px;
+  }
 }
 @media (max-width: 1025px) {
   .block__content {
@@ -833,6 +845,7 @@ ul {
 }
 
 .writing-text-block__change-part {
+  position: relative;
   width: max-content;
   margin-top: 15px;
   font-weight: normal;
@@ -846,6 +859,18 @@ ul {
     width: 100%;
     border-bottom: none;
   }
+}
+
+.writing-text-block__cursor {
+  position: absolute;
+  top: 2px;
+  right: -25px;
+  display: inline-block;
+  width: 18px;
+  height: 38px;
+  border-bottom: 0;
+  background: url(../img/svg/cursor.svg) top left;
+  background-size: contain;
 }
 
 .digital-directions__bottom-counters {
@@ -983,6 +1008,9 @@ ul {
   position: absolute;
   z-index: 3;
 }
+.moving-element line {
+  stroke-width: 5px;
+}
 
 .moving-element__dot {
   width: 24px;
@@ -1029,8 +1057,8 @@ ul {
 .moving-element_triangle_4 {
   right: 40%;
   bottom: 1%;
-  width: 224px;
-  height: 210px;
+  width: 250px;
+  height: 235px;
 }
 
 .moving-element_triangle_5 {
@@ -1058,8 +1086,8 @@ ul {
 .moving-element_triangle_8 {
   top: 3%;
   left: 58%;
-  width: 134px;
-  height: 142px;
+  width: 200px;
+  height: 200px;
 }
 
 .moving-element_triangle_9 {
@@ -1445,7 +1473,7 @@ ul {
   display: flex;
   position: relative;
   border-collapse: collapse;
-  width: 70.9%;
+  width: 70%;
   border: 1px solid #E5E5E5;
   border-bottom: 0;
   background: #FFFFFF;

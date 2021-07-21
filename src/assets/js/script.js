@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     addAnimateTetrahedrons()
 
     changeHeaderBg()
+
+    addWritingTextHandler()
 })
 
 
@@ -78,15 +80,13 @@ function random(min, max) {
 }
 
 function createLine(dot1, dot2, num) {
-    let x1 = dot1.x + +dot1.dotHTML.getBoundingClientRect().width * 0.40,
+    let x1 = dot1.x + +dot1.dotHTML.getBoundingClientRect().width * 0.5,
         y1 = dot1.y + +dot1.dotHTML.getBoundingClientRect().height * 0.5,
-        x12 = dot1.x + +dot1.dotHTML.getBoundingClientRect().width * 0.60,
-        x2 = dot2.x + +dot2.dotHTML.getBoundingClientRect().width * 0.60,
-        y2 = dot2.y + +dot2.dotHTML.getBoundingClientRect().height * 0.5,
-        x22 = dot2.x + +dot2.dotHTML.getBoundingClientRect().width * 0.40
+        x2 = dot2.x + +dot2.dotHTML.getBoundingClientRect().width * 0.5,
+        y2 = dot2.y + +dot2.dotHTML.getBoundingClientRect().height * 0.5
 
     let colorDot1, colorDot2, strokeColor = `url(#Gradient${num})`,
-        coordinates = ` ${x1},${y1} ${x12},${y1} ${x2},${y2} ${x22},${y2}`
+        coordinates = ` x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"`
 
     if (x1 <= x2) {
         colorDot1 = getComputedStyle(dot1.dotHTML).backgroundColor
@@ -94,10 +94,6 @@ function createLine(dot1, dot2, num) {
     } else {
         colorDot1 = getComputedStyle(dot2.dotHTML).backgroundColor
         colorDot2 = getComputedStyle(dot1.dotHTML).backgroundColor
-    }
-
-    if (y2 > y1) {
-        coordinates = ` ${x22},${y2} ${x2},${y2} ${x12},${y1} ${x1},${y1}`
     }
 
     if (x1 === x2 || y1 === y2) {
@@ -109,7 +105,7 @@ function createLine(dot1, dot2, num) {
             <stop offset="0%" stop-color="${colorDot1}"/>
             <stop offset="100%" stop-color="${colorDot2}"/>
         </linearGradient></defs>
-        <polyline  filter="drop-shadow(0 0 25px ${colorDot2})" class="moving-element__line_shadow" fill="${strokeColor}" points="${coordinates}" />`
+        <line  filter="drop-shadow(0 0 25px ${colorDot2})" class="moving-element__line_shadow" stroke="${strokeColor}" ${coordinates} />`
 }
 
 class Dot {
@@ -123,13 +119,13 @@ class Dot {
     }
 
     update(boundRect) {
-        if ((this.dotHTML.getBoundingClientRect().left + this.dotHTML.getBoundingClientRect().width) >= boundRect.getBoundingClientRect().right
-            || ((this.dotHTML.getBoundingClientRect().left) < boundRect.getBoundingClientRect().left)) {
+        if ((this.dotHTML.getBoundingClientRect().left + this.dotHTML.getBoundingClientRect().width) >= boundRect.getBoundingClientRect().right - this.dotHTML.getBoundingClientRect().width
+            || ((this.dotHTML.getBoundingClientRect().left) < boundRect.getBoundingClientRect().left + this.dotHTML.getBoundingClientRect().width)) {
             this.velX = -(this.velX);
         }
 
-        if ((this.dotHTML.getBoundingClientRect().top + this.dotHTML.getBoundingClientRect().width) >= boundRect.getBoundingClientRect().bottom
-            || ((this.dotHTML.getBoundingClientRect().top) < boundRect.getBoundingClientRect().top)) {
+        if ((this.dotHTML.getBoundingClientRect().top + this.dotHTML.getBoundingClientRect().width) >= boundRect.getBoundingClientRect().bottom - this.dotHTML.getBoundingClientRect().width
+            || ((this.dotHTML.getBoundingClientRect().top) < boundRect.getBoundingClientRect().top + this.dotHTML.getBoundingClientRect().width)) {
             this.velY = -(this.velY);
         }
         this.x += this.velX
@@ -148,8 +144,8 @@ class Tetrahedron {
         movingElement.querySelectorAll('.moving-element__dot').forEach(currentDot => {
             let dot = new Dot(
                 currentDot,
-                random(0, movingElement.getBoundingClientRect().width - currentDot.getBoundingClientRect().width),
-                random(0, movingElement.getBoundingClientRect().height - currentDot.getBoundingClientRect().height),
+                random(currentDot.getBoundingClientRect().width, (movingElement.getBoundingClientRect().width - 25) - currentDot.getBoundingClientRect().width),
+                random(currentDot.getBoundingClientRect().height, (movingElement.getBoundingClientRect().height - 25) - currentDot.getBoundingClientRect().height),
                 random(-1, 1),
                 random(-1, 1))
 
@@ -188,11 +184,22 @@ function addAnimateTetrahedrons() {
     })
 
     function loop() {
-        allTetrahedrons.forEach(tetrahedron=>{
+        allTetrahedrons.forEach(tetrahedron => {
             tetrahedron.update()
         })
         requestAnimationFrame(loop)
     }
 
     loop()
+}
+
+function addWritingTextHandler() {
+    // let text = 'повышение качества обслуживания клие',
+    //     counter = 0
+    //     changeTextBlock = document.querySelector('.writing-text-block'),
+    //     changeLine = changeTextBlock.querySelector('.writing-text-block__change-part')
+    // for (let i=0;i<text.length;i++){
+    //     let insertLine = text.replace(0,)
+    //     changeLine.insertAdjacentHTML('afterbegin',)
+    // }
 }
