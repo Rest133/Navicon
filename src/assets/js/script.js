@@ -194,12 +194,22 @@ function addAnimateTetrahedrons() {
 }
 
 function addWritingTextHandler() {
-    // let text = 'повышение качества обслуживания клие',
-    //     counter = 0
-    //     changeTextBlock = document.querySelector('.writing-text-block'),
-    //     changeLine = changeTextBlock.querySelector('.writing-text-block__change-part')
-    // for (let i=0;i<text.length;i++){
-    //     let insertLine = text.replace(0,)
-    //     changeLine.insertAdjacentHTML('afterbegin',)
-    // }
+    let text = 'повышение качества обслуживания клиентов',
+        counter = 0,
+        result = '',
+        changeTextBlock = document.querySelector('.writing-text-block'),
+        changeLine = changeTextBlock.querySelector('.writing-text-block__change-part')
+
+    function typeLine() {
+        if (counter >= text.length) {
+            counter = 0
+            return true
+        }
+        result += `<span>${text[counter]}</span>`
+        counter++
+        changeLine.innerHTML = result + '<span class="writing-text-block__cursor"></span>'
+        setTimeout(typeLine, 90)
+    }
+
+    setTimeout(typeLine, 300)
 }

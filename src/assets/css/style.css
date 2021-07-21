@@ -851,8 +851,10 @@ ul {
   font-weight: normal;
   font-size: 30px;
   line-height: 37px;
-  border-bottom: 2px solid #04ADBF;
   color: #04ADBF;
+}
+.writing-text-block__change-part span {
+  border-bottom: 2px solid #04ADBF;
 }
 @media (max-width: 1025px) {
   .writing-text-block__change-part {
@@ -862,13 +864,11 @@ ul {
 }
 
 .writing-text-block__cursor {
-  position: absolute;
-  top: 2px;
-  right: -25px;
+  position: relative;
+  top: 10px;
   display: inline-block;
   width: 18px;
   height: 38px;
-  border-bottom: 0;
   background: url(../img/svg/cursor.svg) top left;
   background-size: contain;
 }
