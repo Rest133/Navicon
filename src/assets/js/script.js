@@ -180,7 +180,9 @@ class Tetrahedron {
 function addAnimateTetrahedrons() {
     let allTetrahedrons = []
     document.querySelectorAll('.moving-element_triangle').forEach(tetrahedron => {
-        allTetrahedrons.push(new Tetrahedron(tetrahedron))
+        if(getComputedStyle(tetrahedron).display!=='none'){
+            allTetrahedrons.push(new Tetrahedron(tetrahedron))
+        }
     })
 
     function loop() {
@@ -194,22 +196,44 @@ function addAnimateTetrahedrons() {
 }
 
 function addWritingTextHandler() {
-    let text = 'повышение качества обслуживания клиентов',
+    let allWritingTexts = document.querySelectorAll('.writing-text-list p'),
+        changeLine = document.querySelector('.writing-text-block').querySelector('.writing-text-block__change-part')
+
+    let text = '',
         counter = 0,
-        result = '',
-        changeTextBlock = document.querySelector('.writing-text-block'),
-        changeLine = changeTextBlock.querySelector('.writing-text-block__change-part')
+        lineCounter = 0,
+        result = ''
 
     function typeLine() {
         if (counter >= text.length) {
-            counter = 0
+            setTimeout(deleteLine, 1500)
             return true
         }
         result += `<span>${text[counter]}</span>`
+        changeLine.innerHTML = `${result}<span class="writing-text-block__cursor"></span>`
         counter++
-        changeLine.innerHTML = result + '<span class="writing-text-block__cursor"></span>'
-        setTimeout(typeLine, 90)
+        setTimeout(typeLine, 80)
     }
 
-    setTimeout(typeLine, 300)
+    function deleteLine() {
+        if (counter === 0) {
+            setTimeout(startNewLine, 1000)
+            return true
+        }
+        result = result.slice(0, -14)
+        changeLine.innerHTML = `${result}<span class="writing-text-block__cursor"></span>`
+        counter--
+        setTimeout(deleteLine, 50)
+    }
+
+    function startNewLine() {
+        text = allWritingTexts[lineCounter].textContent
+        lineCounter++
+        if (lineCounter >= allWritingTexts.length) {
+            lineCounter = 0
+        }
+        setTimeout(typeLine, 1000)
+    }
+
+    startNewLine()
 }

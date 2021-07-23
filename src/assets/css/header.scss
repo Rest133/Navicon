@@ -614,4 +614,13 @@ ul {
   height: 60px;
   background-color: rgba(255, 255, 255, 0.43);
   cursor: pointer;
+  @media (max-width: 767px) {
+    right: 10px;
+    bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+  }
 }
