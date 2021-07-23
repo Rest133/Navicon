@@ -80,10 +80,13 @@ function random(min, max) {
 }
 
 function createLine(dot1, dot2, num) {
-    let x1 = dot1.x + +dot1.dotHTML.getBoundingClientRect().width * 0.5,
-        y1 = dot1.y + +dot1.dotHTML.getBoundingClientRect().height * 0.5,
-        x2 = dot2.x + +dot2.dotHTML.getBoundingClientRect().width * 0.5,
-        y2 = dot2.y + +dot2.dotHTML.getBoundingClientRect().height * 0.5
+    let dot1Bound = dot1.dotHTML.getBoundingClientRect(),
+        dot2Bound = dot2.dotHTML.getBoundingClientRect()
+
+    let x1 = dot1.x + +dot1Bound.width * 0.5,
+        y1 = dot1.y + +dot1Bound.height * 0.5,
+        x2 = dot2.x + +dot2Bound.width * 0.5,
+        y2 = dot2.y + +dot2Bound.height * 0.5
 
     let colorDot1, colorDot2, strokeColor = `url(#Gradient${num})`,
         coordinates = ` x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"`
@@ -118,14 +121,14 @@ class Dot {
         this.dotHTML.style.animation = `${random(5, 20)}s ease-in-out infinite changeColor both, ${random(10, 20)}s ease-in-out infinite changeSize both`
     }
 
-    update(boundRect) {
-        if ((this.dotHTML.getBoundingClientRect().left + this.dotHTML.getBoundingClientRect().width) >= boundRect.getBoundingClientRect().right - this.dotHTML.getBoundingClientRect().width
-            || ((this.dotHTML.getBoundingClientRect().left) < boundRect.getBoundingClientRect().left + this.dotHTML.getBoundingClientRect().width)) {
+    update(bound) {
+        let dotBound = this.dotHTML.getBoundingClientRect(),
+            boundRect = bound.getBoundingClientRect()
+        if ((dotBound.left + dotBound.width) >= boundRect.right - dotBound.width || ((dotBound.left) < boundRect.left + dotBound.width)) {
             this.velX = -(this.velX);
         }
 
-        if ((this.dotHTML.getBoundingClientRect().top + this.dotHTML.getBoundingClientRect().width) >= boundRect.getBoundingClientRect().bottom - this.dotHTML.getBoundingClientRect().width
-            || ((this.dotHTML.getBoundingClientRect().top) < boundRect.getBoundingClientRect().top + this.dotHTML.getBoundingClientRect().width)) {
+        if ((dotBound.top + dotBound.width) >= boundRect.bottom - dotBound.width || ((dotBound.top) < boundRect.top + dotBound.width)) {
             this.velY = -(this.velY);
         }
         this.x += this.velX
@@ -169,25 +172,28 @@ class Tetrahedron {
     }
 
     update() {
-        this.updateLines()
-
         this.dots.forEach(dot => {
             dot.update(this.boundElement)
         })
+
+        this.updateLines()
     }
 }
 
 function addAnimateTetrahedrons() {
     let allTetrahedrons = []
     document.querySelectorAll('.moving-element_triangle').forEach(tetrahedron => {
-        if(getComputedStyle(tetrahedron).display!=='none'){
+        if (getComputedStyle(tetrahedron).display !== 'none') {
             allTetrahedrons.push(new Tetrahedron(tetrahedron))
         }
     })
 
     function loop() {
         allTetrahedrons.forEach(tetrahedron => {
-            tetrahedron.update()
+            let tetrahedronBound = tetrahedron.boundElement.getBoundingClientRect()
+            if (tetrahedronBound.bottom > 0 && tetrahedronBound.top < innerHeight) {
+                tetrahedron.update()
+            }
         })
         requestAnimationFrame(loop)
     }
@@ -212,7 +218,9 @@ function addWritingTextHandler() {
         result += `<span>${text[counter]}</span>`
         changeLine.innerHTML = `${result}<span class="writing-text-block__cursor"></span>`
         counter++
-        setTimeout(typeLine, 80)
+        setTimeout(function () {
+            requestAnimationFrame(typeLine)
+        }, 80)
     }
 
     function deleteLine() {
@@ -223,7 +231,9 @@ function addWritingTextHandler() {
         result = result.slice(0, -14)
         changeLine.innerHTML = `${result}<span class="writing-text-block__cursor"></span>`
         counter--
-        setTimeout(deleteLine, 50)
+        setTimeout(function () {
+            requestAnimationFrame(deleteLine)
+        }, 50)
     }
 
     function startNewLine() {
@@ -232,7 +242,9 @@ function addWritingTextHandler() {
         if (lineCounter >= allWritingTexts.length) {
             lineCounter = 0
         }
-        setTimeout(typeLine, 1000)
+        setTimeout(function () {
+            requestAnimationFrame(typeLine)
+        }, 1000)
     }
 
     startNewLine()
