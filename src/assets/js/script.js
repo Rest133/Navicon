@@ -108,7 +108,7 @@ function createLine(dot1, dot2, num) {
             <stop offset="0%" stop-color="${colorDot1}"/>
             <stop offset="100%" stop-color="${colorDot2}"/>
         </linearGradient></defs>
-        <line  filter="drop-shadow(0 0 25px ${colorDot2})" class="moving-element__line_shadow" stroke="${strokeColor}" ${coordinates} />`
+        <line  filter="drop-shadow(0 0 25px ${colorDot2})" stroke="${strokeColor}" ${coordinates} />`
 }
 
 class Dot {
@@ -121,14 +121,13 @@ class Dot {
         this.dotHTML.style.animation = `${random(5, 20)}s ease-in-out infinite changeColor both, ${random(10, 20)}s ease-in-out infinite changeSize both`
     }
 
-    update(bound) {
-        let dotBound = this.dotHTML.getBoundingClientRect(),
-            boundRect = bound.getBoundingClientRect()
-        if ((dotBound.left + dotBound.width) >= boundRect.right - dotBound.width || ((dotBound.left) < boundRect.left + dotBound.width)) {
+    update(boundRectTop, boundRectBottom, boundRectLeft, boundRectRight) {
+        let dotBound = this.dotHTML.getBoundingClientRect()
+        if ((dotBound.left + dotBound.width) >= boundRectRight - dotBound.width || ((dotBound.left) < boundRectLeft + dotBound.width)) {
             this.velX = -(this.velX);
         }
 
-        if ((dotBound.top + dotBound.width) >= boundRect.bottom - dotBound.width || ((dotBound.top) < boundRect.top + dotBound.width)) {
+        if ((dotBound.top + dotBound.width) >= boundRectBottom - dotBound.width || ((dotBound.top) < boundRectTop + dotBound.width)) {
             this.velY = -(this.velY);
         }
         this.x += this.velX
@@ -143,12 +142,14 @@ class Tetrahedron {
     constructor(movingElement) {
         this.dots = []
         this.boundElement = movingElement
+        this.boundRect = movingElement.getBoundingClientRect()
 
         movingElement.querySelectorAll('.moving-element__dot').forEach(currentDot => {
-            let dot = new Dot(
+            let currentDotRect = currentDot.getBoundingClientRect(),
+                dot = new Dot(
                 currentDot,
-                random(currentDot.getBoundingClientRect().width, (movingElement.getBoundingClientRect().width - 25) - currentDot.getBoundingClientRect().width),
-                random(currentDot.getBoundingClientRect().height, (movingElement.getBoundingClientRect().height - 25) - currentDot.getBoundingClientRect().height),
+                random(currentDotRect.width, (this.boundRect.width - 25) - currentDotRect.width),
+                random(currentDotRect.height, (this.boundRect.height - 25) - currentDotRect.height),
                 random(-1, 1),
                 random(-1, 1))
 
@@ -156,7 +157,7 @@ class Tetrahedron {
         })
 
         movingElement.querySelectorAll('.moving-element__line').forEach(line => {
-            line.innerHTML = `<svg viewbox=" 0 0 ${this.boundElement.getBoundingClientRect().width} ${this.boundElement.getBoundingClientRect().height}"></svg>`
+            line.innerHTML = `<svg viewbox=" 0 0 ${this.boundRect.width} ${this.boundRect.height}"></svg>`
         })
     }
 
@@ -173,7 +174,7 @@ class Tetrahedron {
 
     update() {
         this.dots.forEach(dot => {
-            dot.update(this.boundElement)
+            dot.update(this.boundRect.top, this.boundRect.bottom, this.boundRect.left, this.boundRect.right)
         })
 
         this.updateLines()
