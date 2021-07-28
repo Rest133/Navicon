@@ -87,7 +87,6 @@
                     <p class="block__title block__title_it-hero">Миру нужен новый ИТ-герой</p>
                     <p class="it-hero__text">Мы – профессионалы своего дела, которые обладают гибким умом и позитивным
                         настроем</p>
-                    <button class="block__button block__button_it-hero">Отправь нам своё резюме</button>
                 </div>
                 <div class="it-hero__img-buttons">
                     <div class="ite-hero__img-button">
@@ -103,6 +102,7 @@
                         <button class="block__button block__button_it-hero-img">С опытом работы</button>
                     </div>
                 </div>
+                <button class="block__button block__button_it-hero">Отправь нам своё резюме</button>
             </div>
         </div>
     </section>
@@ -111,7 +111,7 @@
     <!-- HR-steps block-->
     <section class="block hr-steps">
         <div class="block__content">
-            <p class="block__title  block__title_hr-steps">Как стать частью команды?</p>
+            <p class="block__title block__title_standard block__title_hr-steps">Как стать частью команды?</p>
             <p class="block__subtitle block__subtitle_hr-steps">Мы всегда ищем творческих и открытых к изменениям людей.
                 Если ты готовк ускоренному профессиональному росту в команде экспертов индустрии, то осталось сделать
                 всего 3 шага!</p>
@@ -308,24 +308,41 @@
     <section class="block block_green history-of-success">
         <div class="moving-element moving-element_circle moving-element_circle_10"></div>
         <div class="block__content">
-            <div class="history-of-success__about">
-                <p class="history-of-success__title">История успеха</p>
-                <p class="history-of-success__name">Роднянский Евгений</p>
-                <p class="history-of-success__subtitle">От стажёра до руководителя <br> бизнеса за 4 года</p>
-                <div class="history-of-success__roadmap-slider roadmap-slider">
-                    <div class="roadmap-slider__item">
+            <div class="history-of-success__roadmap-slider roadmap-slider">
+                <div class="roadmap-slider__item">
+                    <p class="history-of-success__title">История успеха</p>
+                    <p class="history-of-success__name">Роднянский Евгений</p>
+                    <p class="history-of-success__subtitle">От стажёра до руководителя <br> бизнеса за 4 года</p>
+                    <div class="roadmap-slider__map">
                         <p class="roadmap-slider__step roadmap-slider__step_ml30">Руководитель департамента (2,5 года)</p>
-                        <p class="roadmap-slider__step">Операционный директор Utrace (3 года)</p>
+                        <p class="roadmap-slider__step roadmap-slider__step_end">Операционный директор Utrace (3 года)</p>
                         <p class="roadmap-slider__step">Стажер</p>
                         <p class="roadmap-slider__step">Консультант (2 года) </p>
                         <p class="roadmap-slider__step roadmap-slider__step_curved-line">Руководитель проектов (2 года) </p>
                     </div>
+                    <div class="history-of-success__photo">
+                        <div class="history-of-success__img-wrapper">
+                            <img src="assets/img/2.content/success-photo.png" alt="" class="history-of-success__photo-img">
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="history-of-success__photo">
-            <div class="history-of-success__img-wrapper">
-                <img src="assets/img/2.content/success-photo.png" alt="" class="history-of-success__photo-img">
+                <div class="roadmap-slider__item">
+                    <p class="history-of-success__title">История успеха</p>
+                    <p class="history-of-success__name">Роднянский Евгений</p>
+                    <p class="history-of-success__subtitle">От стажёра до руководителя <br> бизнеса за 4 года</p>
+                    <div class="roadmap-slider__map">
+                        <p class="roadmap-slider__step roadmap-slider__step_ml30">Руководитель департамента (2,5 года)</p>
+                        <p class="roadmap-slider__step roadmap-slider__step_end">Операционный директор Utrace (3 года)</p>
+                        <p class="roadmap-slider__step">Стажер</p>
+                        <p class="roadmap-slider__step">Консультант (2 года) </p>
+                        <p class="roadmap-slider__step roadmap-slider__step_curved-line">Руководитель проектов (2 года) </p>
+                    </div>
+                    <div class="history-of-success__photo">
+                        <div class="history-of-success__img-wrapper">
+                            <img src="assets/img/2.content/success-photo.png" alt="" class="history-of-success__photo-img">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -346,7 +363,6 @@
             <div class="cards__card cards__card_second">
                 <div class="green-rect green-rect_large"></div>
                 <div class="cards__card-title">Крутые <br> корпоративы</div>
-                <a href="#" class="cards__card-link"></a>
             </div>
             <div class="cards__card cards__card_third">
                 <div class="green-rect"></div>
@@ -371,33 +387,35 @@
     <section class="block block_dark stories">
         <div class="moving-element moving-element_circle moving-element_circle_13"></div>
         <div class="block__content">
-            <p class="block__title block__title_standard">Мы все очень разные. И это потрясающе!</p>
+            <p class="block__title block__title_standard block__title_stories">Мы все очень разные. <br> И это потрясающе!</p>
             <p class="block__subtitle block__subtitle_stories">Именно наше различие делает команду Navicon <br> успешнее и
                 сильнее</p>
             <div class="stories-slider">
-                <div class="stories-slider__item">
-                    <div class="stories-slider__item-img-wrapper">
-                        <img src="assets/img/2.content/stories1.png" alt="" class="stories-slider__item-img">
+                <div class="stories-slider__wrapper">
+                    <div class="stories-slider__item">
+                        <div class="stories-slider__item-img-wrapper">
+                            <img src="assets/img/2.content/stories1.png" alt="" class="stories-slider__item-img">
+                        </div>
                     </div>
-                </div>
-                <div class="stories-slider__item">
-                    <div class="stories-slider__item-img-wrapper">
-                        <img src="assets/img/2.content/stories2.png" alt="" class="stories-slider__item-img">
+                    <div class="stories-slider__item">
+                        <div class="stories-slider__item-img-wrapper">
+                            <img src="assets/img/2.content/stories2.png" alt="" class="stories-slider__item-img">
+                        </div>
                     </div>
-                </div>
-                <div class="stories-slider__item">
-                    <div class="stories-slider__item-img-wrapper">
-                        <img src="assets/img/2.content/stories3.png" alt="" class="stories-slider__item-img">
+                    <div class="stories-slider__item">
+                        <div class="stories-slider__item-img-wrapper">
+                            <img src="assets/img/2.content/stories3.png" alt="" class="stories-slider__item-img">
+                        </div>
                     </div>
-                </div>
-                <div class="stories-slider__item">
-                    <div class="stories-slider__item-img-wrapper">
-                        <img src="assets/img/2.content/stories4.png" alt="" class="stories-slider__item-img">
+                    <div class="stories-slider__item">
+                        <div class="stories-slider__item-img-wrapper">
+                            <img src="assets/img/2.content/stories4.png" alt="" class="stories-slider__item-img">
+                        </div>
                     </div>
-                </div>
-                <div class="stories-slider__item">
-                    <div class="stories-slider__item-img-wrapper">
-                        <img src="assets/img/2.content/stories5.png" alt="" class="stories-slider__item-img">
+                    <div class="stories-slider__item">
+                        <div class="stories-slider__item-img-wrapper">
+                            <img src="assets/img/2.content/stories5.png" alt="" class="stories-slider__item-img">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -413,7 +431,7 @@
             <p class="office-photo__text">У каждого <br> есть своё <br> место силы</p>
         </div>
         <div class="block__content">
-            <p class="block__title block__title_standard">Мы все очень разные. И это потрясающе!</p>
+            <p class="block__title block__title_standard block__title_about-us">Если ты разделяешь наши ценности, мы ждём тебя!</p>
             <div class="advantages-block__list advantages-block__list_about-us">
                 <div class="advantages-block__list-item">
                     <div class="block__img-wrapper">

@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addPartnersPortfolio()
 
+    addHistorySuccessSlider()
+
     addAnimateTetrahedrons()
 
     changeHeaderBg()
@@ -49,6 +51,19 @@ function addPartnersPortfolio() {
     }
 }
 
+function addHistorySuccessSlider() {
+    if(document.querySelector('.roadmap-slider')!==null){
+        let slider = document.querySelector('.roadmap-slider')
+        $(slider).slick({
+            arrows: true,
+            slidesToShow: 1,
+            infinite: false,
+            variableWidth: true,
+            draggable: false
+        })
+    }
+}
+
 function changeHeaderBg() {
     let allBlock = document.querySelectorAll('.block'),
         header = document.querySelector('header')
@@ -69,6 +84,14 @@ function changeHeaderBg() {
             if (header.getBoundingClientRect().top + pageYOffset === 0) {
                 header.classList.remove('fixed')
                 header.classList.remove('fixed-white')
+            }
+        })
+    } else {
+        window.addEventListener('scroll', () => {
+            if (header.getBoundingClientRect().top + pageYOffset === 0) {
+                header.style.backgroundColor=''
+            }else {
+                header.style.backgroundColor='#000000'
             }
         })
     }
@@ -203,50 +226,52 @@ function addAnimateTetrahedrons() {
 }
 
 function addWritingTextHandler() {
-    let allWritingTexts = document.querySelectorAll('.writing-text-list p'),
-        changeLine = document.querySelector('.writing-text-block').querySelector('.writing-text-block__change-part')
+    if (document.querySelector('.writing-text-block')!==null) {
+        let allWritingTexts = document.querySelectorAll('.writing-text-list p'),
+            changeLine = document.querySelector('.writing-text-block').querySelector('.writing-text-block__change-part')
 
-    let text = '',
-        counter = 0,
-        lineCounter = 0,
-        result = ''
+        let text = '',
+            counter = 0,
+            lineCounter = 0,
+            result = ''
 
-    function typeLine() {
-        if (counter >= text.length) {
-            setTimeout(deleteLine, 1500)
-            return true
+        function typeLine() {
+            if (counter >= text.length) {
+                setTimeout(deleteLine, 1500)
+                return true
+            }
+            result += `<span>${text[counter]}</span>`
+            changeLine.innerHTML = `${result}<span class="writing-text-block__cursor"></span>`
+            counter++
+            setTimeout(function () {
+                requestAnimationFrame(typeLine)
+            }, 80)
         }
-        result += `<span>${text[counter]}</span>`
-        changeLine.innerHTML = `${result}<span class="writing-text-block__cursor"></span>`
-        counter++
-        setTimeout(function () {
-            requestAnimationFrame(typeLine)
-        }, 80)
-    }
 
-    function deleteLine() {
-        if (counter === 0) {
-            setTimeout(startNewLine, 1000)
-            return true
+        function deleteLine() {
+            if (counter === 0) {
+                setTimeout(startNewLine, 1000)
+                return true
+            }
+            result = result.slice(0, -14)
+            changeLine.innerHTML = `${result}<span class="writing-text-block__cursor"></span>`
+            counter--
+            setTimeout(function () {
+                requestAnimationFrame(deleteLine)
+            }, 50)
         }
-        result = result.slice(0, -14)
-        changeLine.innerHTML = `${result}<span class="writing-text-block__cursor"></span>`
-        counter--
-        setTimeout(function () {
-            requestAnimationFrame(deleteLine)
-        }, 50)
-    }
 
-    function startNewLine() {
-        text = allWritingTexts[lineCounter].textContent
-        lineCounter++
-        if (lineCounter >= allWritingTexts.length) {
-            lineCounter = 0
+        function startNewLine() {
+            text = allWritingTexts[lineCounter].textContent
+            lineCounter++
+            if (lineCounter >= allWritingTexts.length) {
+                lineCounter = 0
+            }
+            setTimeout(function () {
+                requestAnimationFrame(typeLine)
+            }, 1000)
         }
-        setTimeout(function () {
-            requestAnimationFrame(typeLine)
-        }, 1000)
-    }
 
-    startNewLine()
+        startNewLine()
+    }
 }

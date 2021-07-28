@@ -50,17 +50,21 @@
   &:hover {
     opacity: 0.7;
   }
-
-
 }
 
 .partners__slider .slick-arrow {
   top: unset;
   bottom: -10%;
-  
+
   @media (max-width: 1025px) {
     bottom: 0;
   }
+}
+
+.roadmap-slider .slick-arrow {
+  top: unset;
+  bottom: 5%;
+  background: #FFFFFF;
 }
 
 /* Стрелка влево */
@@ -74,6 +78,10 @@
   left: calc((100% - 26px) / 2 - 30px);
 }
 
+.roadmap-slider .slick-arrow.slick-prev {
+  left: calc((100% - 26px) / 4 - 30px);
+}
+
 /* Стрелка вправо */
 .slick-arrow.slick-next {
   right: -56px;
@@ -81,6 +89,11 @@
 
 .partners__slider .slick-arrow.slick-next {
   right: calc((100% - 26px) / 2 - 30px);
+}
+
+.roadmap-slider .slick-arrow.slick-next {
+  right: unset;
+  left: calc((100% - 26px) / 4 + 30px);
 }
 
 /* Стрелка не активная */
