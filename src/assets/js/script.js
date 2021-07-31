@@ -5,11 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addHistorySuccessSlider()
 
+    addQuoteSlider()
+
+    addTeamSlider()
+
     addAnimateTetrahedrons()
 
     changeHeaderBg()
 
     addWritingTextHandler()
+
+    adaptiveHeightBlocks()
 })
 
 
@@ -52,7 +58,7 @@ function addPartnersPortfolio() {
 }
 
 function addHistorySuccessSlider() {
-    if(document.querySelector('.roadmap-slider')!==null){
+    if (document.querySelector('.roadmap-slider') !== null) {
         let slider = document.querySelector('.roadmap-slider')
         $(slider).slick({
             arrows: true,
@@ -60,6 +66,28 @@ function addHistorySuccessSlider() {
             infinite: false,
             variableWidth: true,
             draggable: false
+        })
+    }
+}
+
+function addQuoteSlider() {
+    if (document.querySelector('.portfolio__quote-slider') !== null) {
+        let slider = document.querySelector('.portfolio__quote-slider')
+        $(slider).slick({
+            arrows: true,
+            slidesToShow: 1,
+            infinite: false,
+            variableWidth: false,
+            draggable: false,
+            responsive: [
+                {
+                    breakpoint: 1026,
+                    settings: {
+                        arrows: false,
+                        variableWidth: true,
+                    }
+                }
+            ]
         })
     }
 }
@@ -89,9 +117,9 @@ function changeHeaderBg() {
     } else {
         window.addEventListener('scroll', () => {
             if (header.getBoundingClientRect().top + pageYOffset === 0) {
-                header.style.backgroundColor=''
-            }else {
-                header.style.backgroundColor='#000000'
+                header.style.backgroundColor = ''
+            } else {
+                header.style.backgroundColor = '#000000'
             }
         })
     }
@@ -170,11 +198,11 @@ class Tetrahedron {
         movingElement.querySelectorAll('.moving-element__dot').forEach(currentDot => {
             let currentDotRect = currentDot.getBoundingClientRect(),
                 dot = new Dot(
-                currentDot,
-                random(currentDotRect.width, (this.boundRect.width - 25) - currentDotRect.width),
-                random(currentDotRect.height, (this.boundRect.height - 25) - currentDotRect.height),
-                random(-1, 1),
-                random(-1, 1))
+                    currentDot,
+                    random(currentDotRect.width, (this.boundRect.width - 25) - currentDotRect.width),
+                    random(currentDotRect.height, (this.boundRect.height - 25) - currentDotRect.height),
+                    random(-1, 1),
+                    random(-1, 1))
 
             this.dots.push(dot)
         })
@@ -226,7 +254,7 @@ function addAnimateTetrahedrons() {
 }
 
 function addWritingTextHandler() {
-    if (document.querySelector('.writing-text-block')!==null) {
+    if (document.querySelector('.writing-text-block') !== null) {
         let allWritingTexts = document.querySelectorAll('.writing-text-list p'),
             changeLine = document.querySelector('.writing-text-block').querySelector('.writing-text-block__change-part')
 
@@ -273,5 +301,51 @@ function addWritingTextHandler() {
         }
 
         startNewLine()
+    }
+}
+
+function adaptiveHeightBlocks() {
+    if (document.querySelector('.our-services__list') !== null) {
+        let allLists = document.querySelector('.our-services__list').querySelectorAll('.our-services__list-item-text-blocks')
+        if (!window.matchMedia('(max-width: 767px)').matches) {
+            resize()
+            window.addEventListener("resize", resize);
+        }
+
+        function resize() {
+            allLists.forEach(currentList => {
+                let maxHeight = 0
+                currentList.querySelectorAll('.our-services__list-item-text-title').forEach(currentTitle => {
+                    let titleHeight = +(getComputedStyle(currentTitle).height.replace('px', ''))
+                    if (titleHeight > maxHeight) {
+                        maxHeight = titleHeight
+                    }
+                })
+                currentList.querySelectorAll('.our-services__list-item-text-title').forEach(currentTitle => {
+                    currentTitle.style.height = maxHeight + 'px'
+                })
+
+            })
+        }
+    }
+}
+
+function addTeamSlider() {
+    if (document.querySelector('.our-team__slider') !== null) {
+        let slider = document.querySelector('.our-team__slider'),
+            allCards = slider.querySelectorAll('.our-team__slider-card'),
+            allSteps = (allCards.length - 1) / 2,
+            direction = -1
+
+        allCards.forEach((card, i) => {
+            if (i < allSteps) {
+                card.style.transform = `rotateY(${Math.sin(0.17 * i + Math.PI / 2) * -10}deg) scale(${Math.sin(0.1 * i) + 0.45})`
+                card.style.right = `${Math.sin(0.17 * i + Math.PI / 2) * 85 - 3}%`
+            }
+            if (i > allSteps) {
+                card.style.transform = `rotateY(${Math.sin(0.17 * (i - allSteps) + Math.PI / 2) * 5}deg) scale(${Math.sin(0.1 * (i - allSteps)) + 0.45})`
+                card.style.left = `${Math.sin(0.17 * (i - allSteps) + Math.PI / 2) * 85 + 3}%`
+            }
+        })
     }
 }

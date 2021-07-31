@@ -67,6 +67,10 @@
   background: #FFFFFF;
 }
 
+.portfolio__quote-slider .slick-arrow{
+  top: 20%;
+}
+
 /* Стрелка влево */
 .slick-arrow.slick-prev {
   left: -56px;
@@ -82,6 +86,13 @@
   left: calc((100% - 26px) / 4 - 30px);
 }
 
+.portfolio__quote-slider .slick-arrow.slick-prev {
+  left: -5%;
+  @media (max-width: 1650px) {
+    left:0;
+  }
+}
+
 /* Стрелка вправо */
 .slick-arrow.slick-next {
   right: -56px;
@@ -94,6 +105,13 @@
 .roadmap-slider .slick-arrow.slick-next {
   right: unset;
   left: calc((100% - 26px) / 4 + 30px);
+}
+
+.portfolio__quote-slider .slick-arrow.slick-next {
+  right: -7%;
+  @media (max-width: 1650px) {
+    right: 0;
+  }
 }
 
 /* Стрелка не активная */

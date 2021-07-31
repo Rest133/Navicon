@@ -79,14 +79,18 @@
     <!-- Microsoft partner block -->
     <section class="block microsoft-partner">
         <div class="block__content">
-            <div class="microsoft-partner__img-wrapper">
-                <img src="assets/img/2.content/microsoft-partner.png" alt="" class="microsoft-partner__img">
+            <div class="microsoft-partner__logo-text">
+                <div class="microsoft-partner__logo-text-wrapper no-pc">
+                    <img src="assets/img/2.content/microsoft-logo.png" alt="" class="microsoft-partner__logo-text-img">
+                </div>
+                <p class="microsoft-partner__logo-text-title no-pc">Microsoft Partner</p>
+                <img src="assets/img/2.content/microsoft-partner.png" class="no-mobile" alt="">
             </div>
             <div class="microsoft-partner__list">
-                <p class="microsoft-partner__list-item"><span>Gold</span>Application Development</p>
-                <p class="microsoft-partner__list-item"><span>Gold</span>Cloud Platform</p>
-                <p class="microsoft-partner__list-item"><span>Gold</span>Data Analytics</p>
-                <p class="microsoft-partner__list-item"><span>Gold</span>Enterprise Resource Planning</p>
+                <p class="microsoft-partner__list-item"><span>Gold</span>Application <br> Development</p>
+                <p class="microsoft-partner__list-item"><span>Gold</span>Data <br> Analytics</p>
+                <p class="microsoft-partner__list-item"><span>Gold</span>Cloud <br> Platform</p>
+                <p class="microsoft-partner__list-item"><span>Gold</span>Enterprise <br> Resource Planning</p>
             </div>
         </div>
     </section>
@@ -95,7 +99,7 @@
     <!-- Microsoft dynamics365 block -->
     <section class="block block_grey microsoft-dynamics">
         <div class="block__content">
-            <p class="block__title block__title_standard">Dynamics 365 - больше, чем просто ERP</p>
+            <p class="block__title block__title_standard block__title_microsoft-dynamics">Dynamics 365 - больше, чем просто ERP</p>
             <div class="microsoft-dynamics__list">
                 <div class="microsoft-dynamics__list-item">
                     <p class="microsoft-dynamics__list-item-title">Раскройте всю мощь Power BI внутри вашей ERP</p>
@@ -193,7 +197,7 @@
     <section class="block block_dark services">
         <div class="moving-element  moving-element_radiant-round-shape_services"></div>
         <div class="block__content">
-            <p class="block__title block__title_standard">Подключайте в 2 клика то, что вам нужно</p>
+            <p class="block__title block__title_standard block__title_services">Подключайте в 2 клика то, что вам нужно</p>
             <p class="block__subtitle block__subtitle_services">Получите 500+ сервисов и возможность использовать
                 новейшие технологии от мирового IT-лидера</p>
             <div class="services__apps-column">
@@ -248,7 +252,7 @@
     <section class="block block_grey specialist-quote specialist-quote_pt50">
         <div class="block__content">
             <div class="specialist-quote__content specialist-quote__content_wrap">
-                <p class="block__subtitle block__subtitle_quote">Доверьте диджитализацию своего бизнеса надёжному <br>
+                <p class="block__subtitle block__subtitle_quote block__subtitle_quote_erp">Доверьте диджитализацию своего бизнеса надёжному <br>
                     партнёру с глубокой отраслевой
                     экспертизой</p>
                 <div class="specialist-quote__photo specialist-quote__photo_ml40">
@@ -273,11 +277,12 @@
     <!-- /Specialist quote block-->
 
     <!-- Portfolio block -->
-    <section class="block portfolio">
+    <section class="block portfolio portfolio_erp">
         <div class="block__content">
             <p class="block__title block__title_with-blue-text block__title_portfolio block__title_portfolio_fz49">
                 200+ международных и российских лидеров доверяют нам</p>
             <div class="portfolio__logo-list">
+                <div class="portfolio__logo-list-wrapper">
                 <div class="portfolio__logo-list-item">
                     <div class="portfolio__logo-list-item-img-wrapper">
                         <img src="assets/img/2.content/portfolio-logo1.png" alt="" class="portfolio__logo-list-item-img">
@@ -338,11 +343,12 @@
                         <img src="assets/img/2.content/portfolio-logo10.png" alt="" class="portfolio__logo-list-item-img">
                     </div>
                 </div>
+                </div>
             </div>
             <div class="portfolio__quote-slider">
                 <div class="portfolio__quote-slider-item">
-                    <div class="specialist-quote__logo">
-                        <div class="specialist-quote__img-wrapper">
+                    <div class="specialist-quote__logo specialist-quote__logo_1">
+                        <div class="specialist-quote__img-wrapper ">
                             <img src="assets/img/2.content/portfolio-logo13.png" alt="" class="specialist-quote__img">
                         </div>
                     </div>
@@ -357,13 +363,32 @@
                             Во многом это удалось благодаря тому, что команда интегратора работала в тесном
                             сотрудничестве c проектной командой Smith & Nephew»</p>
                         <p class="specialist-quote__author">Николай Шипаров</p>
-                        <p class="specialist-quote__author-position">
+                        <p class="specialist-quote__author-position specialist-quote__author-position_br">
                             Менеджер проектов <a href="#">Smith & Nephew</a>
                         </p>
+                        <button class="block__button block__button_portfolio">Запросить референс</button>
+                    </div>
+                </div>
+                <div class="portfolio__quote-slider-item">
+                    <div class="specialist-quote__logo specialist-quote__logo_2">
+                        <div class="specialist-quote__img-wrapper">
+                            <img src="assets/img/2.content/portfolio-logo14.png" alt="" class="specialist-quote__img">
+                        </div>
+                    </div>
+                    <div class="specialist-quote__text-block">
+                        <p class="specialist-quote__quote-text">«На текущем этапе развития ИТ-технологий их диапазон
+                            применения в бизнесе расширяется с каждым годом. «Ригла» в этой сфере выступает новатором,
+                            внедряя самые передовые инструменты для повышения эффективности всех процессов,
+                            конкурентоспособности, прозрачности для партнеров и клиентоориентированности.
+                            За технологиями будущее»</p>
+                        <p class="specialist-quote__author">Александр Филиппов</p>
+                        <p class="specialist-quote__author-position">
+                            генеральный директор <br> <a href="#">аптечной сети «Ригла»</a>
+                        </p>
+                        <button class="block__button block__button_portfolio">Запросить референс</button>
                     </div>
                 </div>
             </div>
-            <button class="block__button block__button_portfolio">Запросить референс</button>
         </div>
     </section>
     <!-- /Portfolio block-->
@@ -427,7 +452,7 @@
     <!-- Revolutionary approach block -->
     <section class="block revolutionary-approach">
         <div class="block__content">
-            <p class="block__title block__title_with-blue-text"><span>Это прорыв.</span> Революционный подход Extended
+            <p class="block__title block__title_with-blue-text block__title_revolutionary-approach"><span>Это прорыв.</span> Революционный подход Extended
                 ERP:
                 гораздо больше возможностей и неизменная простота в использовании</p>
             <div class="revolutionary-approach__compare">
@@ -435,14 +460,14 @@
                     <p class="revolutionary-approach__compare-vs-text">VS</p>
                 </div>
                 <div class="revolutionary-approach__compare-column">
-                    <p class="revolutionary-approach__compare-title">ERP 1.0</p>
+                    <p class="revolutionary-approach__compare-title">ERP 1.0 <br> <br></p>
                     <div class="revolutionary-approach__compare-item">
-                        <p class="revolutionary-approach__compare-text-title">Отдельная система</p>
+                        <p class="revolutionary-approach__compare-text-title">Отдельная <br> система</p>
                         <p class="revolutionary-approach__compare-text">Большое количество интеграций для поддержки
                             процессов внутри компании и с партнёрами</p>
                     </div>
                     <div class="revolutionary-approach__compare-item">
-                        <p class="revolutionary-approach__compare-text-title">Модульный подход</p>
+                        <p class="revolutionary-approach__compare-text-title">Модульный <br> подход</p>
                         <p class="revolutionary-approach__compare-text">Для реализации нового функционала требуется
                             внедрение отдельных модулей</p>
                     </div>
@@ -453,7 +478,7 @@
                     </div>
                 </div>
                 <div class="revolutionary-approach__compare-column">
-                    <p class="revolutionary-approach__compare-title">Extended ERP</p>
+                    <p class="revolutionary-approach__compare-title revolutionary-approach__compare-title_right">Extended ERP</p>
                     <div class="revolutionary-approach__compare-item">
                         <p class="revolutionary-approach__compare-text-title">Новый уровень коллаборации</p>
                         <p class="revolutionary-approach__compare-text">Обменивайтесь данными внутри компании и с
@@ -465,7 +490,7 @@
                             портфеля сервисов Microsoft Dynamics 365 в 1 клик</p>
                     </div>
                     <div class="revolutionary-approach__compare-item">
-                        <p class="revolutionary-approach__compare-text-title">Комбинация лучшей аналитикитики</p>
+                        <p class="revolutionary-approach__compare-text-title">Комбинация <br> лучшей <br> аналитикитики</p>
                         <p class="revolutionary-approach__compare-text">Извлекайте больше инсайтов из данных, которые
                             есть в ERP, быстрее и выгоднее "из коробки"</p>
                     </div>
@@ -479,7 +504,7 @@
     <!-- Exclusive partner block -->
     <section class="block exclusive-partner">
         <div class="block__content">
-            <p class="block__title block__title_standard">Navicon - эксклюзивный партнёр AX for Pharma 365 <br> в России
+            <p class="block__title block__title_standard ">Navicon - эксклюзивный партнёр AX for Pharma 365 <br> в России
             </p>
             <div class="exclusive-partner__text-block">
                 <p class="exclusive-partner__green-text">Мировой разработчик решений <br> для фармацевтических компаний
@@ -550,49 +575,55 @@
             </div>
             <div class="our-services__list">
                 <div class="our-services__list-item">
-                    <p class="our-services__list-item-title our-services__list-item-title_mt0">ВНЕДРЕНИЕ И УПРАВЛЕНИЕ
+                    <p class="our-services__list-item-title our-services__list-item-title_first">ВНЕДРЕНИЕ И УПРАВЛЕНИЕ
                         ПРОЕКТАМИ</p>
+                    <div class="our-services__list-item-text-blocks">
                     <div class="our-services__list-item-text-block">
-                        <p class="our-services__list-item-text-title ">Внедрение <br>
-                            с нуля <br> <br></p>
+                        <p class="our-services__list-item-text-title">Внедрение <br> с нуля</p>
                         <p class="our-services__list-item-text">Классический консалтинг по реализации аналитических
                             проектов</p>
                     </div>
                     <div class="our-services__list-item-text-block">
-                        <p class="our-services__list-item-text-title">Адаптация <br> глобального <br> решения</p>
+                        <p class="our-services__list-item-text-title">Адаптация глобального решения</p>
                         <p class="our-services__list-item-text">Ролл аут глобального решения и полное соответствие
                             принципам корпоративного стандарта</p>
                     </div>
                     <div class="our-services__list-item-text-block">
-                        <p class="our-services__list-item-text-title">Миграция <br> в облако <br> <br></p>
+                        <p class="our-services__list-item-text-title">Миграция <br> в облако</p>
                         <p class="our-services__list-item-text">Перенос текущего решения в облачную инфраструктуру</p>
                     </div>
+                    </div>
                 </div>
-                <div class="our-services__list-item">
+                <div class="our-services__list-item our-services__list-item_long">
                     <p class="our-services__list-item-title">СОПРОВОЖДЕНИЕ И РАЗВИТИЕ</p>
+                    <div class="our-services__list-item-text-blocks">
                     <div class="our-services__list-item-text-block">
-                        <p class="our-services__list-item-text-title">Поддержка <br> и обновление</p>
+                        <p class="our-services__list-item-text-title">Поддержка
+                            <br> и обновление</p>
                         <p class="our-services__list-item-text">Полный спектр услугпо поддержке и развитию вашего
                             решения</p>
                     </div>
                     <div class="our-services__list-item-text-block">
-                        <p class="our-services__list-item-text-title">Переходна <br> новую версию</p>
+                        <p class="our-services__list-item-text-title">Переход
+                            <br> на новую версию</p>
                         <p class="our-services__list-item-text">Быстрый и комфортный переход на новую версию за счёт
                             уникальных решений</p>
                     </div>
+                    </div>
                 </div>
-                <div class="our-services__list-item">
+                <div class="our-services__list-item our-services__list-item_long">
                     <p class="our-services__list-item-title">ПОСТАВКА ЛИЦЕНЗИЙ</p>
+                    <div class="our-services__list-item-text-blocks">
                     <div class="our-services__list-item-text-block">
-                        <p class="our-services__list-item-text-title">Уникальные <br> условия покупки <br> лицензий</p>
+                        <p class="our-services__list-item-text-title">Уникальные условия покупки лицензий</p>
                         <p class="our-services__list-item-text">Dynamics 365, Power Platform</p>
                     </div>
                     <div class="our-services__list-item-text-block">
-                        <p class="our-services__list-item-text-title">Пакеты <br>
-                            Программ <br> <br></p>
+                        <p class="our-services__list-item-text-title">Пакеты <br> Программ</p>
                         <p class="our-services__list-item-text">Cloud Solution Provider (CSP) <br>
                             Dynamics Price List (DPL)<br>
                             Open Value (OV)</p>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -633,7 +664,110 @@
             <p class="block__title block__title_standard">№1 КОМАНДА</p>
             <p class="block__subtitle block__subtitle_our-team">Используйте <span>опыт наших экспертов</span> для решения задач вашего бизнеса</p>
             <div class="our-team__slider">
-                <img src="assets/img/2.content/our-team.png" alt="" class="">
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 1</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card our-team__slider-card_active"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
+                <div class="our-team__slider-card"
+                     style="background: url(assets/img/2.content/team-slider.png) center no-repeat; background-size: cover">
+                    <div class="our-team__slider-card-description">
+                        <p class="our-team__slider-card-name">Екатерина 2</p>
+                        <p class="our-team__slider-card-position">Старший разработчик</p>
+                        <p class="our-team__slider-card-experience">10+ лет в IT</p>
+                    </div>
+                </div>
             </div>
             <button class="block__button block__button_our-team">Связаться с консультантом</button>
             <a href="#" class="block__link block__link_our-team">Стать частью команды</a>
