@@ -1,6 +1,11 @@
 /* Слайдер */
+
 .slick-slider {
   position: relative;
+}
+
+.history-of-success__photo-roadmap-slider.slick-slider {
+  position: absolute;
 }
 
 /* Ограничевающая оболочка */
@@ -13,7 +18,6 @@
 .slick-track {
   display: flex;
 }
-
 
 /* Слайд */
 .slick-slide {
@@ -65,9 +69,19 @@
   top: unset;
   bottom: 5%;
   background: #FFFFFF;
+  
+  @media (max-width: 1025px) {
+    bottom: 2%;
+  }
 }
 
-.portfolio__quote-slider .slick-arrow{
+.stories-slider .slick-arrow {
+  top: unset;
+  bottom: -10%;
+  background: #FFFFFF;
+}
+
+.portfolio__quote-slider .slick-arrow {
   top: 20%;
 }
 
@@ -84,13 +98,22 @@
 
 .roadmap-slider .slick-arrow.slick-prev {
   left: calc((100% - 26px) / 4 - 30px);
+  
+  @media (max-width: 1025px) {
+    left: calc((100% - 26px) / 2 - 30px);
+  }
 }
 
-.portfolio__quote-slider .slick-arrow.slick-prev {
-  left: -5%;
-  @media (max-width: 1650px) {
-    left:0;
+.roadmap-slider .slick-arrow.slick-prev {
+  left: calc((100% - 26px) / 4 - 30px);
+
+  @media (max-width: 1025px) {
+    left: calc((100% - 26px) / 2 - 30px);
   }
+}
+
+.stories-slider .slick-arrow.slick-prev {
+  left: calc((100% - 26px) / 2 - 30px);
 }
 
 /* Стрелка вправо */
@@ -105,6 +128,14 @@
 .roadmap-slider .slick-arrow.slick-next {
   right: unset;
   left: calc((100% - 26px) / 4 + 30px);
+
+  @media (max-width: 1025px) {
+    left: calc((100% - 26px) / 2 + 30px);
+  }
+}
+
+.stories-slider .slick-arrow.slick-next {
+  left: calc((100% - 26px) / 2 + 30px);
 }
 
 .portfolio__quote-slider .slick-arrow.slick-next {
@@ -121,4 +152,8 @@
   &:hover {
     opacity: 1;
   }
+}
+
+.stories-slider .slick-arrow.slick-disabled {
+  background: #4C4C4C;
 }

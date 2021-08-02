@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addPartnersPortfolio()
 
-    addHistorySuccessSlider()
+    addHistorySuccessSliders()
+
+    addStoriesSlider()
 
     addQuoteSlider()
 
@@ -57,7 +59,7 @@ function addPartnersPortfolio() {
     }
 }
 
-function addHistorySuccessSlider() {
+function addHistorySuccessSliders() {
     if (document.querySelector('.roadmap-slider') !== null) {
         let slider = document.querySelector('.roadmap-slider')
         $(slider).slick({
@@ -65,7 +67,39 @@ function addHistorySuccessSlider() {
             slidesToShow: 1,
             infinite: false,
             variableWidth: true,
-            draggable: false
+            draggable: false,
+            asNavFor: '.photo-roadmap-slider'
+        })
+        let photoSlider = document.querySelector('.photo-roadmap-slider')
+        $(photoSlider).slick({
+            arrows: false,
+            slidesToShow: 1,
+            infinite: false,
+            variableWidth: false,
+            draggable: false,
+            swipe: false
+        })
+    }
+}
+
+function addStoriesSlider() {
+    if (document.querySelector('.stories-slider') !== null) {
+        let slider = document.querySelector('.stories-slider')
+        $(slider).slick({
+            arrows: true,
+            slidesToShow: 4,
+            infinite: false,
+            variableWidth: true,
+            draggable: false,
+            responsive: [
+                {
+                    breakpoint: 1026,
+                    settings: {
+                        arrows: false,
+                        slidesToShow: 1
+                    }
+                }
+            ]
         })
     }
 }
@@ -333,19 +367,57 @@ function adaptiveHeightBlocks() {
 function addTeamSlider() {
     if (document.querySelector('.our-team__slider') !== null) {
         let slider = document.querySelector('.our-team__slider'),
+            cardsList = slider.querySelector('.our-team__slider-wrapper'),
             allCards = slider.querySelectorAll('.our-team__slider-card'),
             allSteps = (allCards.length - 1) / 2,
-            direction = -1
+            btnPrev = slider.querySelector('.our-team__slider-button_prev'),
+            btnNext = slider.querySelector('.our-team__slider-button_next')
 
-        allCards.forEach((card, i) => {
-            if (i < allSteps) {
-                card.style.transform = `rotateY(${Math.sin(0.17 * i + Math.PI / 2) * -10}deg) scale(${Math.sin(0.1 * i) + 0.45})`
-                card.style.right = `${Math.sin(0.17 * i + Math.PI / 2) * 85 - 3}%`
-            }
-            if (i > allSteps) {
-                card.style.transform = `rotateY(${Math.sin(0.17 * (i - allSteps) + Math.PI / 2) * 5}deg) scale(${Math.sin(0.1 * (i - allSteps)) + 0.45})`
-                card.style.left = `${Math.sin(0.17 * (i - allSteps) + Math.PI / 2) * 85 + 3}%`
-            }
+        updateCardPosition()
+
+        btnNext.addEventListener('click', () => {
+            changeActiveCard()
         })
+
+        btnPrev.addEventListener('click', () => {
+            changeActiveCard(true)
+        })
+
+        function updateCardPosition() {
+            cardsList.querySelectorAll('.our-team__slider-card').forEach((card, i) => {
+                if (card.classList.contains('our-team__slider-card_active')) {
+                    card.style.transform = 'rotateY(0deg) scale(100%)'
+                    card.style.zIndex = `${allCards.length}`
+                    card.style.left = ''
+                }
+                if (i < allSteps) {
+                    card.style.transform = `rotateY(${-5 * (allSteps - i)}deg) scale(${95 - (allSteps - i - 1) * 10}%)`
+                    card.style.left = `${(0.3 * (allSteps - i) - 2.1) * (0.3 * (allSteps - i) - 2.1) * 10 - 7.8}%`
+                    card.style.zIndex = i + 1
+                }
+                if (i > allSteps) {
+                    card.style.transform = `rotateY(${5 * (i - allSteps)}deg) scale(${95 - (i - allSteps - 1) * 10}%)`
+                    card.style.left = `calc(100% - ${(0.3 * (i - allSteps) - 2.1) * (0.3 * (i - allSteps) - 2.1) * 10 - 7.8}% - 330px)`
+                    card.style.zIndex = allCards.length - i
+                }
+            })
+        }
+
+        function changeActiveCard(reverse = false) {
+            let cards = cardsList.querySelectorAll('.our-team__slider-card')
+            cards.forEach(card => {
+                card.classList.remove('our-team__slider-card_active')
+            })
+
+            if (!reverse) {
+                cards[allSteps + 1].classList.add('our-team__slider-card_active')
+                cardsList.append(cardsList.querySelector('.our-team__slider-card'))
+            } else {
+                cards[allSteps - 1].classList.add('our-team__slider-card_active')
+                cardsList.prepend(cardsList.querySelectorAll('.our-team__slider-card')[allCards.length - 1])
+            }
+            updateCardPosition()
+        }
+
     }
 }
