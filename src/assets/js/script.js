@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     addWritingTextHandler()
 
     adaptiveHeightBlocks()
+
+    addDescriptionSwitches()
 })
 
 
@@ -418,6 +420,32 @@ function addTeamSlider() {
             }
             updateCardPosition()
         }
+
+    }
+}
+
+function addDescriptionSwitches() {
+    if (document.querySelector('.description-switch') !== null) {
+        let allSwitches = document.querySelectorAll('.description-switch')
+
+        allSwitches.forEach(switchBlock => {
+            let allTopButtons = switchBlock.querySelector('.description-switch__top-row').querySelectorAll('.description-switch__top-row-item'),
+                allChangingBlocks = switchBlock.querySelector('.description-switch__changing-part').querySelectorAll('.changing-item')
+
+            allTopButtons.forEach((currentBtn, i) => {
+                currentBtn.addEventListener('click', () => {
+                    allTopButtons.forEach(btn => {
+                        btn.classList.remove('active')
+                    })
+                    currentBtn.classList.add('active')
+
+                    allChangingBlocks.forEach(changingBlock => {
+                        changingBlock.classList.remove('active')
+                    })
+                    allChangingBlocks[i].classList.add('active')
+                })
+            })
+        })
 
     }
 }
