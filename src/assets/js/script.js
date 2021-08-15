@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     addPortfolioSliderHandler()
 
+    addPortfolioVideoSlider()
+
     addPartnersPortfolio()
 
     addHistorySuccessSliders()
@@ -11,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addTeamSlider()
 
+    addTechPartnersSlider()
+
     addAnimateTetrahedrons()
 
     changeHeaderBg()
@@ -20,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     adaptiveHeightBlocks()
 
     addDescriptionSwitches()
+
+    addSwitcher()
 })
 
 
@@ -46,6 +52,27 @@ function addPortfolioSliderHandler() {
             })
         })
     }
+}
+
+function addPortfolioVideoSlider() {
+    let slider = document.querySelector('.portfolio__video-slider')
+    $(slider).slick({
+        arrows: true,
+        slidesToShow: 4,
+        infinite: false,
+        dots: true,
+        variableWidth: false,
+        draggable: false,
+        responsive: [
+            {
+                breakpoint: 1026,
+                settings: {
+                    arrows: false,
+                    variableWidth: true,
+                }
+            }
+        ]
+    })
 }
 
 function addPartnersPortfolio() {
@@ -126,6 +153,27 @@ function addQuoteSlider() {
             ]
         })
     }
+}
+
+function addTechPartnersSlider() {
+    let slider = document.querySelector('.technology-partners__slider')
+    $(slider).slick({
+        arrows: true,
+        slidesToShow: 3,
+        infinite: false,
+        variableWidth: false,
+        draggable: false,
+        responsive: [
+            {
+                breakpoint: 1026,
+                settings: {
+                    arrows: false,
+                    variableWidth: true,
+                    slidesToShow: 1
+                }
+            }
+        ]
+    })
 }
 
 function changeHeaderBg() {
@@ -445,6 +493,66 @@ function addDescriptionSwitches() {
                     allChangingBlocks[i].classList.add('active')
                 })
             })
+        })
+
+    }
+}
+
+function addSwitcher() {
+    if (document.querySelector('.description-switcher') !== null) {
+        let allSwitcherBlock = document.querySelectorAll('.description-switcher')
+
+        allSwitcherBlock.forEach(switchBlock=>{
+            let allTopButtons = switchBlock.querySelectorAll('.description-switch__top-row-item'),
+                allChangingBlocks = switchBlock.querySelectorAll('.changing-item')
+
+            changeSwitcherBlockHeight()
+            allTopButtons.forEach((currentBtn, i) => {
+                currentBtn.addEventListener('click', () => {
+                    if (window.matchMedia('(max-width: 1025px)').matches) {
+                        if (currentBtn.classList.contains('active')) {
+                            currentBtn.classList.remove('active')
+                            allChangingBlocks.forEach(changingBlock => {
+                                changingBlock.classList.remove('active')
+                            })
+                        } else {
+                            allTopButtons.forEach(btn => {
+                                btn.classList.remove('active')
+                            })
+
+                            currentBtn.classList.add('active')
+
+                            allChangingBlocks.forEach(changingBlock => {
+                                changingBlock.classList.remove('active')
+                            })
+                            allChangingBlocks[i].classList.add('active')
+                        }
+
+                    } else {
+                        allTopButtons.forEach(btn => {
+                            btn.classList.remove('active')
+                        })
+
+                        currentBtn.classList.add('active')
+
+                        allChangingBlocks.forEach(changingBlock => {
+                            changingBlock.classList.remove('active')
+                        })
+                        allChangingBlocks[i].classList.add('active')
+                        changeSwitcherBlockHeight()
+                    }
+                })
+            })
+
+            function changeSwitcherBlockHeight() {
+                if (window.matchMedia('(min-width: 1026px)').matches) {
+                    allChangingBlocks.forEach(block => {
+                        if (block.classList.contains('active')) {
+                            switchBlock.style.height = block.getBoundingClientRect().height + 49 + 'px'
+                        }
+                    })
+                }
+            }
         })
 
     }
