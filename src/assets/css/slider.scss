@@ -83,6 +83,10 @@
 
 .portfolio__quote-slider .slick-arrow {
   top: 20%;
+  background: #000000;
+  &:hover{
+    background: #04ADBF;
+  }
 }
 
 .technology-partners__slider .slick-arrow{
@@ -193,6 +197,13 @@
 }
 
 .portfolio__video-slider .slick-disabled{
+  background: #000000;
+  &:hover{
+    background: #000000;
+  }
+}
+
+.portfolio__quote-slider .slick-disabled{
   background: #000000;
   &:hover{
     background: #000000;

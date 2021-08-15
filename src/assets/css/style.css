@@ -1343,6 +1343,7 @@ ul {
   height: 28px;
   color: #ffffff;
   text-transform: uppercase;
+  letter-spacing: 0.2em;
   border-bottom: 1px solid #04ADBF;
   background: transparent;
   cursor: pointer;
@@ -1368,6 +1369,11 @@ ul {
     max-width: 290px;
     width: 33%;
     margin-right: 5%;
+  }
+}
+@media (max-width: 1025px) {
+  .arrow-blocks-list__arrow-block-button {
+    letter-spacing: 0.1em;
   }
 }
 @media (max-width: 767px) {
@@ -1493,7 +1499,7 @@ ul {
   width: 18px;
   height: 38px;
   border-bottom: none !important;
-  background: url(../img/svg/cursor.svg) top left;
+  background: url(../img/svg/cursor_small-rect.svg) top left;
   background-size: contain;
   animation: 500ms normal infinite changeVisibility;
 }
@@ -1737,7 +1743,7 @@ ul {
 .moving-element__dot {
   width: 24px;
   height: 24px;
-  border: 6px solid #000000;
+  border: 5px solid #000000;
   border-radius: 50%;
   background-color: #CD40FF;
   position: absolute;
@@ -3221,6 +3227,7 @@ ul {
 .block__button_services {
   margin-top: 30px;
   width: max-content;
+  font-weight: 400;
 }
 
 .block__button_portfolio {
@@ -4704,7 +4711,7 @@ ul {
 .hr-map__example {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(6, 233px);
+  grid-template-columns: repeat(6, 231px);
   grid-template-rows: repeat(2, 70px);
   grid-gap: 30px;
 }
@@ -5859,9 +5866,10 @@ ul {
 
 .services__apps-column-text {
   margin-top: auto;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  width: 310px;
 }
 @media (max-width: 1025px) {
   .services__apps-column-text {
@@ -8141,6 +8149,10 @@ ul {
 
 .portfolio__quote-slider .slick-arrow {
   top: 20%;
+  background: #000000;
+}
+.portfolio__quote-slider .slick-arrow:hover {
+  background: #04ADBF;
 }
 
 .technology-partners__slider .slick-arrow {
@@ -8258,6 +8270,13 @@ ul {
   background: #000000;
 }
 .portfolio__video-slider .slick-disabled:hover {
+  background: #000000;
+}
+
+.portfolio__quote-slider .slick-disabled {
+  background: #000000;
+}
+.portfolio__quote-slider .slick-disabled:hover {
   background: #000000;
 }
 
